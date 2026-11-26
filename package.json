@@ -1,0 +1,28 @@
+{
+  "name": "firework-beat-audit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "用观众席手机录像核查音乐焰火节拍、声光测距与点火修正",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/bundle-worklets.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/bundle-worklets.mjs",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "worklets": "node scripts/bundle-worklets.mjs",
+    "verify": "tsx src/test/benchmark.ts",
+    "test": "tsx src/test/benchmark.ts",
+    "e2e": "node scripts/e2e-smoke.mjs",
+    "e2e:import": "node scripts/e2e-import.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.7",
+    "esbuild": "^0.25.5",
+    "playwright-core": "^1.65.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.0"
+  }
+}
