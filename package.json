@@ -1,0 +1,22 @@
+{
+  "name": "fireworks-sync-audit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "基于手机录像的音乐焰火声光事件核查与点火修正工具",
+  "scripts": {
+    "build:worklets": "esbuild src/worklets/explosion-worklet.ts src/worklets/beat-worklet.ts --bundle --outdir=public/worklets --format=esm --target=es2022",
+    "dev": "npm run build:worklets && vite",
+    "build": "npm run build:worklets && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "selftest": "node scripts/run-selftest.ts",
+    "smoke": "node scripts/smoke-app.ts",
+    "verify": "node scripts/verify-requirements.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.7",
+    "esbuild": "^0.25.12",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7"
+  }
+}
